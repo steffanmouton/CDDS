@@ -1,6 +1,6 @@
 #include <iostream>
 
-//make linked list
+//make templated linked list
 //have iterators
 //list knows first and last
 
