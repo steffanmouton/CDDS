@@ -1,40 +1,81 @@
 #include "List.h"
 
 template<typename T>
-void List<T>::PushFront(const T value&)
+void LinkedListType<T>::CopyList(const LinkedListType<T>&)
 {
 }
 
 template<typename T>
-void List<T>::PushBack(const T value&)
+const LinkedListType<Type>& LinkedListType<T>::operator=(const LinkedListType<T>&)
+{
+	// TODO: insert return statement here
+}
+
+template<typename T>
+void LinkedListType<T>::InitializeList()
 {
 }
 
 template<typename T>
-void List<T>::Insert(Iterator<T> myIt, const T value&)
+bool LinkedListType<T>::IsEmptyList() const
+{
+	return false;
+}
+
+template<typename T>
+void LinkedListType<T>::Print() const
 {
 }
 
 template<typename T>
-Iterator<T> List<T>::Begin()
+int LinkedListType<T>::Length() const
 {
-	return Iterator();
+	return 0;
 }
 
 template<typename T>
-Iterator<T> List<T>::End()
+void LinkedListType<T>::DestroyList()
 {
-	return Iterator();
 }
 
 template<typename T>
-Node<T> List<T>::First()
+T LinkedListType<T>::Front() const
 {
-	return Node();
+	return T();
 }
 
 template<typename T>
-Node<T> List<T>::Last()
+T LinkedListType<T>::Back() const
 {
-	return Node();
+	return T();
+}
+
+template<typename T>
+Iterator<T> LinkedListType<T>::Begin()
+{
+	return Iterator<T>();
+}
+
+template<typename T>
+Iterator<T> LinkedListType<T>::End()
+{
+	return Iterator<T>();
+}
+
+template<typename T>
+LinkedListType<T>::LinkedListType()
+{
+	count = 0;
+	first = nullptr;
+	last = nullptr;
+}
+
+template<typename T>
+LinkedListType<T>::LinkedListType(const LinkedListType<T>)
+{
+}
+
+template<typename T>
+LinkedListType<T>::~LinkedListType()
+{
 }

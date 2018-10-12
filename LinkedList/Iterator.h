@@ -17,4 +17,3 @@ public:
 	bool operator==(const Iterator<T>&) const;
 	bool operator!=(const Iterator<T>&) const;
 };
-

@@ -1,4 +1,7 @@
 #include <iostream>
+#include "Iterator.h"
+#include "List.h"
+#include "Node.h"
 
 //make linked list
 //have iterators
@@ -6,5 +9,5 @@
 
 int main()
 {
-
+	Iterator myIt;
 }

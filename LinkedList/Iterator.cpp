@@ -1,6 +1,18 @@
 #include "Iterator.h"
 
 template<typename T>
+Iterator<T>::Iterator()
+{
+	current = nullptr;
+}
+
+template<typename T>
+Iterator<T>::Iterator(Node<T>)
+{
+	current = &Node<T>;
+}
+
+template<typename T>
 Iterator<T> Iterator<T>::operator++()
 {
 	return current = current->next;
