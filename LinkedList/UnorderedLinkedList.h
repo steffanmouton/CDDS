@@ -6,9 +6,10 @@ class UnorderedLinkedList : public LinkedListType<T>
 {
 public:
 	bool Search(const T& item) const override
+		// goes through every node in list and returns true if item is found
 	{
 		Node<T>* check = this->first;
-		for (int i = 0; i < this->count; i++) // goes through every place in list
+		for (int i = 0; i < this->count; i++) 
 		{
 			if (check->info == item)
 			{
@@ -22,13 +23,13 @@ public:
 
 		return false;
 	}
-	void InsertFirst(const T& item) override
+	void InsertFirst(const T& item) override //Insert new node at first place in list
 	{
 		this->count++;
 		Node<T>* temp = new Node<T>{ item, this->first };				
 		this->first = temp;		
 	}
-	void InsertLast(const T& item) override
+	void InsertLast(const T& item) override //Insert a new node at the last place in list
 	{
 		this->count++;
 		Node<T>* temp = new Node<T>{ item, this->first };
@@ -54,61 +55,56 @@ public:
 	}
 	void DeleteNode(const T& item) override
 	{
-		Node<T>* eraser = this->first;
+		//create lead and trailing pointers
+		Node<T>* lead = this->first;
 		Node<T>* trail = this->first;
 
-		if (this->count == 0)
+		
+		if (this->count == 0) //if list is empty, say so
 		{
 			std::cout << "List is empty" << std::endl;
 		}
-		else if (this->count == 1)
+		//if only one node, reset first and last pointers to null
+		else if (this->count == 1 && lead->info == item) 
 		{
-			delete eraser;
+			delete lead;
 			this->first = nullptr;
 			this->last = nullptr;
 			this->count--;
 		}
+		//if more than one node, check to see if node containing desired value
+		//is first, last, or in middle of list. Then delete and readjust pointers
+		//accordingly
 		else if (this->count > 1)
 		{
 			for (int i = 0; i < this->count; i++)
 			{
-				eraser = eraser->next;
+				lead = lead->next;
 				if (trail->info == item && i == 0)
 				{
-					trail->next = this->first->next;
-					this->first = trail;
-					delete eraser;
+					this->first = lead;
+					delete trail;
 					this->count--;
 					break;
+
 				}
-				else if (eraser->info == item && i > 0 && i < this->count)
+				else if (lead->info == item && i >= 0 && i < this->count)
 				{
-					trail = eraser->next;
-					delete eraser;
+					trail->next = lead->next;
+					delete lead;
 					this->count--;
 					break;
 				}
-				else if (eraser->info == item && i == this->count)
+				else if (lead->info == item && i == this->count)
 				{
 					trail->next = nullptr;
 					this->last = trail;
-					delete eraser;
+					delete lead;
 					this->count--;
 					break;
 				}
 				trail = trail->next;
 			}
 		}
-
-		//Iterator<T>* eraser = new Iterator<T>(this->first);
-		//Iterator<T>* trail = new Iterator<T>(this->first);		
-		//while (*eraser != (T)item)
-		//{
-		//	eraser++;
-		//	trail++;
-		//}
-		//eraser++;
-		//trail->current->next = eraser->current->next;
-		//delete eraser;
 	}
 };

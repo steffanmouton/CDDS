@@ -36,6 +36,7 @@ public:
 template<typename T>
 void LinkedListType<T>::CopyList(const LinkedListType<T>&)
 {
+
 }
 
 template<typename T>
@@ -76,6 +77,7 @@ void LinkedListType<T>::Print() const
 			printer = printer->next;
 		}
 	}
+	std::cout << std::endl;
 }
 
 template<typename T>
@@ -145,4 +147,5 @@ LinkedListType<T>::LinkedListType(const LinkedListType<T>&)
 template<typename T>
 LinkedListType<T>::~LinkedListType()
 {
+	this->DestroyList;
 }
