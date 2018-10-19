@@ -8,17 +8,27 @@
 int main()
 {
 	UnorderedLinkedList<int> *numbers = new UnorderedLinkedList<int>();
+	UnorderedLinkedList<int> *numbers2 = new UnorderedLinkedList<int>();
 
 	numbers->InsertFirst(5);
 	numbers->InsertLast(10);
 	numbers->InsertFirst(15);
 	numbers->InsertLast(20);
-	
-	numbers->Print();
-	//expected result is 15 5 10 20
 
-	numbers->DeleteNode(15);
-	numbers->DeleteNode(20);
-	//expected result is 5
+	*numbers2 = *numbers;
+
 	numbers->Print();
+	numbers2->Print();
+
+	// 15 5 10 20
+	// 15 5 10 20
+
+	numbers->DeleteNode(20);
+	numbers2->DeleteNode(15);
+
+	numbers->Print();
+	numbers2->Print();
+
+	//15 5 10
+	//5 10 20
 }
