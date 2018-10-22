@@ -5,6 +5,27 @@ template<typename T>
 class UnorderedLinkedList : public LinkedListType<T>
 {
 public:
+	//TODO : finish this maybe
+	/*void BubbleSort(const bool ascending)
+	{
+		asc = ascending;
+		Node<T>* check1 = this->first;
+		Node<T>* check2 = this->first;
+		Node<T>* trail = this->first;
+		for (int i = 0; i < count; i++, check1++)
+		{
+			for (int j = 0; j < count; j++, check2++)
+			{
+				if (asc == 1)
+				{
+					if (check1->info > check2->info)
+					{
+
+					}
+				}
+			}
+		}
+	}*/
 	bool Search(const T& item) const override
 		// goes through every node in list and returns true if item is found
 	{

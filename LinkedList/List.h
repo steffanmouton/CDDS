@@ -15,6 +15,8 @@ private:
 	void CopyList(const LinkedListType<T>&);
 
 public:
+
+	/*virtual void BubbleSort(const bool ascending) = 0;*/
 	const LinkedListType<T>& operator=(const LinkedListType<T>&);
 	void InitializeList();
 	bool IsEmptyList() const;
