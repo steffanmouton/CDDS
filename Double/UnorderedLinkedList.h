@@ -134,9 +134,6 @@ public:
 					{
 						Node<T>* temp = new Node<T>{ check1->info ,check1->next, check1->prev };
 
-						temp->next = check1->next;
-						temp->prev = check1->prev;
-
 						check1->next = check2->next;
 						check1->prev = check2->prev;
 
@@ -151,9 +148,6 @@ public:
 					if (check1->info > check2->info)
 					{
 						Node<T>* temp = new Node<T>{ check1->info ,check1->next, check1->prev };
-
-						temp->next = check1->next;
-						temp->prev = check1->prev;
 
 						check1->next = check2->next;
 						check1->prev = check2->prev;
