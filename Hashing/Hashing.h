@@ -18,12 +18,18 @@ public:
 		unsigned int hash = 0;
 		const unsigned int len = m_size;
 
-		for (unsigned int i = 0; i < len; i++)
+		/*for (unsigned int i = 0; i < len; i++)
 		{
 			hash += key++ * len;
+		}*/
+
+		//attempt at complex hash
+		for (unsigned int i = 0; i < len; i++)
+		{
+			hash = (hash * 1313) + Key[i];
 		}
 
-		return hash;
+		return (hash & 0x7FFFFFFF);
 	}
 
 	T& operator [] (const KeyType& key)
@@ -43,6 +49,7 @@ public:
 		unsigned int hashedKey = badHash(key);
 		hashedKey %= m_size;
 		m_data[hashedKey] = T(value);
+		m_size++;
 	}
 
 private:
