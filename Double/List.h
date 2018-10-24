@@ -28,6 +28,7 @@ public:
 	virtual void InsertLast(const T&) = 0;
 	virtual void DeleteNode(const T&) = 0;
 	virtual void BubbleSort(const bool ascending) = 0;
+	virtual void SwapNode(Node<T> *left, Node<T> *right) = 0;
 	Iterator<T> Begin();
 	Iterator<T> End();
 	LinkedListType();

@@ -35,7 +35,7 @@ public:
 	void InsertLast(const T& item) override //Insert a new node at the last place in list
 	{
 		this->count++;
-		Node<T>* temp = new Node<T>{ item, nullptr, this->last };
+		Node<T> *temp = new Node<T>(item, nullptr, this->last );
 
 		if (this->count == 1) //if one item in list, set first and last to that item
 		{
@@ -44,18 +44,19 @@ public:
 		}
 		else if (this->count == 2) //if two items, set original to first, new to last
 		{
-		
-			this->last= temp;
+
+			this->last = temp;
 			this->first->next = temp;
-			
+
 		}
 		else //if more than two items, only adjust last to be temp
 		{
-			
+
 			this->last->next = temp;
 			this->last = temp;
 		}
 	}
+
 	void DeleteNode(const T& item) override
 	{
 		//create lead and trailing pointers
@@ -116,6 +117,29 @@ public:
 		}
 	}
 
+	//Swap Method
+	void SwapNode(Node<T> *left, Node<T> *right) override
+	{
+		Node<T>* temp = new Node<T>{ left->info ,left->next, left->prev };
+
+		if (left == this->first)
+		{
+			this->first = right;
+		}
+
+		if (left == this->last)
+		{
+			this->last = right;
+		}
+
+		left->next = right->next;
+		left->prev = right->next;
+
+		right->next = temp->next;
+		right->prev = temp->prev;
+	}
+
+	//Bubble Sort
 	void BubbleSort(const bool ascending) override
 	{
 		Node<T>* check1 = this->first;
@@ -132,30 +156,14 @@ public:
 				{
 					if (check1->info < check2->info)
 					{
-						Node<T>* temp = new Node<T>{ check1->info ,check1->next, check1->prev };
-
-						check1->next = check2->next;
-						check1->prev = check2->prev;
-
-						check2->next = temp->next;
-						check2->prev = temp->prev;
-
-						delete temp;
+						SwapNode(check1, check2);
 					}
 				}
 				else
 				{
 					if (check1->info > check2->info)
 					{
-						Node<T>* temp = new Node<T>{ check1->info ,check1->next, check1->prev };
-
-						check1->next = check2->next;
-						check1->prev = check2->prev;
-
-						check2->next = temp->next;
-						check2->prev = temp->prev;
-
-						delete temp;
+						SwapNode(check1, check2);
 					}
 				}
 			}

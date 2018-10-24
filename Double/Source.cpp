@@ -1,7 +1,4 @@
 #include <iostream>
-#include "Iterator.h"
-#include "List.h"
-#include "Node.h"
 #include "UnorderedLinkedList.h"
 
 int main()
@@ -22,12 +19,11 @@ int main()
 	// 15 5 10 20
 	// 15 5 10 20
 
-	numbers->DeleteNode(20);
-	numbers2->DeleteNode(15);
+	numbers->BubbleSort(1);
 
 	numbers->Print();
 	numbers2->Print();
 
-	//15 5 10
-	//5 10 20
+	// 5 10 15 20
+	// 15 5 10 20
 }
