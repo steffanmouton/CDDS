@@ -23,7 +23,7 @@ public:
 			hash += key++ * len;
 		}*/
 
-		//attempt at complex hash
+		//attempt at complex hash, BKDR Hash algorithm
 		for (unsigned int i = 0; i < len; i++)
 		{
 			hash = (hash * 1313) + Key[i];

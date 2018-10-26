@@ -145,11 +145,11 @@ public:
 		Node<T>* check1 = this->first;
 		Node<T>* check2;
 
-		for (int i = 0; i < this->count; i++, check1++)
+		for (int i = 0; i < this->count; i++, check1 = check1->next)
 		{
 			check2 = this->first;
 
-			for (int j = 0; j < this->count; j++, check2++)
+			for (int j = 0; j < this->count; j++, check2 = check2->next)
 			{
 
 				if (ascending)
@@ -159,12 +159,16 @@ public:
 						SwapNode(check1, check2);
 					}
 				}
-				else
+				else if (!ascending)
 				{
 					if (check1->info > check2->info)
 					{
 						SwapNode(check1, check2);
 					}
+				}
+				else
+				{
+					break;
 				}
 			}
 		}

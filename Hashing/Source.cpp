@@ -5,7 +5,7 @@
 
 namespace HashFunction
 {
-	//implementation of a basic addition hash, def collision-prone
+	
 	
 }
 struct Player
