@@ -31,4 +31,6 @@ int main()
 
 	//15 5 10
 	//5 10 20
+
+	system("pause");
 }

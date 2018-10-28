@@ -59,15 +59,15 @@ T Iterator<T>::operator*()
 }
 
 template<typename T>
-bool Iterator<T>::operator==(const Iterator<T>&) const
+bool Iterator<T>::operator==(const Iterator<T>& rhs) const
 {
 	//compares iterators by the info of the nodes they point to
-	return (this->current->info == Iterator<T>->current-info);
+	return (*this == *rhs);
 }
 
 template<typename T>
-bool Iterator<T>::operator!=(const Iterator<T>&) const
+bool Iterator<T>::operator!=(const Iterator<T>& rhs) const
 {
 	//compares iterators by the info of the nodes they point to
-	return (this->current != Iterator<T>->current);
+	return (*this != *rhs);
 }
