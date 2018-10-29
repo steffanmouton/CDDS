@@ -20,8 +20,9 @@ int main()
 	numbers->Print();
 	numbers2->Print();
 
-	// 15 5 10 20
-	// 15 5 10 20
+	//Expected Values
+	//list "numbers" 15 5 10 20
+	//list "numbers2" 15 5 10 20
 
 	numbers->DeleteNode(20);
 	numbers2->DeleteNode(15);
@@ -29,8 +30,9 @@ int main()
 	numbers->Print();
 	numbers2->Print();
 
-	//15 5 10
-	//5 10 20
+	//Expected Values
+	//list "numbers" 15 5 10
+	//list "numbers2" 5 10 20
 
 	system("pause");
 }
