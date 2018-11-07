@@ -28,6 +28,11 @@ public:
 		this->count++;
 		Node<T>* temp = new Node<T>{ item, this->first };				
 		this->first = temp;		
+
+		if (count == 1)
+		{
+			this->last = temp;
+		}
 	}
 	void InsertLast(const T& item) override //Insert a new node at the last place in list
 	{
