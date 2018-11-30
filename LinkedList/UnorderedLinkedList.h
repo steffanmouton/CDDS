@@ -29,7 +29,7 @@ public:
 		Node<T>* temp = new Node<T>{ item, this->first };				
 		this->first = temp;		
 
-		if (count == 1)
+		if (this->count == 1)
 		{
 			this->last = temp;
 		}
