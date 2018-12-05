@@ -41,4 +41,6 @@ int main()
 
 
 	std::cout << test["Steffan"];
+
+	system("pause");
 }
